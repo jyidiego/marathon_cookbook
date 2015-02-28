@@ -83,6 +83,7 @@ zk_server_list = []
 zk_port = nil
 zk_path = nil
 zk_master_option = nil
+zk_state = nil
 zk_option = nil
 
 if node['marathon']['zookeeper_server_list'].count > 0
@@ -110,8 +111,9 @@ zk_server_list.each do |zk_server|
 end
 
 if zk_url_list.count > 0
+  zk_state = node['marathon']['zk_state_path']
   zk_master_option = "--master zk://#{zk_url_list.join(',')}/#{zk_path}"
-  zk_option = "--zk zk://#{zk_url_list.join(',')}/#{zk_path}"
+  zk_option = "--zk zk://#{zk_url_list.join(',')}/#{zk_state}"
 end
 
 # If we have been able to find zookeeper master endpoint and zookeeper hosts

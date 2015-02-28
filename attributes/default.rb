@@ -23,12 +23,13 @@ default['marathon']['options']['master']                  = nil
 default['marathon']['options']['mesos_role']              = nil
 default['marathon']['options']['ssl_keystore_password']   = nil
 default['marathon']['options']['ssl_keystore_path']       = nil
-default['marathon']['options']['zk_state']                = nil
 default['marathon']['options']['zk_timeout']              = nil
+default['marathon']['options']['zk_state']                = nil
 
 default['marathon']['zookeeper_server_list']              = []
 default['marathon']['zookeeper_port']                     = 2181
 default['marathon']['zookeeper_path']                     = 'mesos'
+default['marathon']['zk_state_path']                      = 'marathon'
 
 default['marathon']['zookeeper_exhibitor_discovery']      = false
 default['marathon']['zookeeper_exhibitor_url']            = nil
